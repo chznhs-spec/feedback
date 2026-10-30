@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Manrope', Arial, Helvetica, sans-serif;
+    background-color: #f8fafc; /* Světlé pozadí podle hlavního webu */
+    color: #1e293b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.feedback-wrapper {
+    width: 100%;
+    max-width: 700px;
+    background: #ffffff;
+    color: #1e293b;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 66, 81, 0.12);
+    overflow: hidden;
+}
+
+/* Horní banner */
+.feedback-banner {
+    width: 100%;
+    max-height: 220px;
+    overflow: hidden;
+    background-color: #004251;
+}
+
+.feedback-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.feedback-header {
+    background: #ffffff;
+    padding: 30px 30px 10px 30px;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 66, 81, 0.08);
+}
+
+.feedback-header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: rgb(0, 66, 81);
+    margin-bottom: 8px;
+}
+
+.feedback-header p {
+    font-size: 1rem;
+    color: #475569;
+    line-height: 1.5;
+}
+
+.feedback-body {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+.form-group label span {
+    color: #e11d48;
+}
+
+.form-group .hint {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.hint-flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+/* Hodnocení hvězdičkami / čísly */
+.rating-scale {
+    display: flex;
+    gap: 8px;
+}
+
+.rating-scale label {
+    flex: 1;
+    background: #f1f5f9;
+    border: 2px solid #cbd5e1;
+    border-radius: 8px;
+    text-align: center;
+    padding: 12px 0;
+    cursor: pointer;
+    font-weight: 700;
+    color: #334155;
+    transition: all 0.2s ease;
+}
+
+.rating-scale input {
+    display: none;
+}
+
+.rating-scale input:checked + span,
+.rating-scale label:hover {
+    background: rgb(0, 66, 81);
+    color: #ffffff;
+    border-color: rgb(0, 66, 81);
+}
+
+.rating-scale label span {
+    display: block;
+    width: 100%;
+}
+
+/* Vstupy */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    background: #f8fafc;
+    color: #1e293b;
+    transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: rgb(0, 66, 81);
+    background: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Žluté tlačítko (stejné jako na hlavním webu) */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #fbc02d;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.submit-btn:hover {
+    background-color: #f57f17;
+    transform: scale(1.01);
+}
+
+.submit-btn:disabled {
+    background-color: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.status-message {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 15px;
+    display: none;
+    font-size: 0.95rem;
+}
+
+.footer-branding {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+@media (max-width: 600px) {
+    body { 
+        padding: 15px 10px; 
+    }
+    .feedback-wrapper { 
+        border-radius: 12px; 
+    }
+    .feedback-header { 
+        padding: 20px; 
+    }
+    .feedback-body { 
+        padding: 20px; 
+    }
+    .rating-scale { 
+        gap: 4px; 
+    }
+    .rating-scale label { 
+        padding: 10px 0; 
+        font-size: 0.9rem; 
+    }
+}
